@@ -1,17 +1,17 @@
 'use strict'
 
-let promise1 = Promise.reject("NOOO-1!");
+let promise1 = Promise.reject("NOOO1!");
 
-let promise2 = Promise.reject("NOOO-2!");
+let promise2 = Promise.reject("NOOO2!");
 
-let promise3 = Promise.resolve("YEAH!!!")
+let promise3 = Promise.resolve("YEAH!!")
 
 promise1
   .then(null, error => console.error(error))
 
 
 promise2
-  // .then((k) => console.log(k))
+  .then((k) => console.log(k))
   .catch(error => console.log(error))
 
   
