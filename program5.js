@@ -1,18 +1,19 @@
 'use strict'
 
-let promise = new Promise((fulfill, reject) => {
-  fulfill("PROMISE VALUE");
-})
+let promise = Promise.resolve("YEAH!");
 
-// let onReject = (error) => {
-//   console.log(error.message);
-// }
+let promise1 = Promise.reject("NOOO!");
 
-// let onReject = (error) => {
-//   console.log(error.message);
-// }
+console.log("1111111111");
 
 promise
   .then(console.log, null)
+  .catch(error => console.error(error))
 
-console.log("MAIN PROGRAM");
+console.log("2222222222");
+
+promise1
+.then((k) => console.log(k))
+.catch(error => console.log(error))
+
+console.log("3333333333");
