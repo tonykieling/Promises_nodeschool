@@ -3,14 +3,20 @@
 let promise = new Promise((fulfill, reject) => {
 
     setTimeout(() => {
-      reject(new Error("REJECTED!"));
+      fulfill("FULFILLED!");
     }, 300)
   })
 
-function onReject(error) {
-  console.log(error.message);
-}
-
 promise
-  .then(null, onReject)
-  
+  .then(() => {
+  console.log("FULFILLED!");
+  })
+  // .catch((asd) => console.log("error: ", asd))
+
+
+
+
+
+// const wait = time => new Promise((resolve) => setTimeout(resolve, time));
+
+// wait(3000).then(() => console.log('Hello!')); // 'Hello!'

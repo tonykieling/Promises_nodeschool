@@ -1,24 +1,20 @@
 'use strict'
 
-first()
-  .then(message => {
-    return second(message)})
-  .then(console.log)
-  .catch(error => console.log(error)) // it is not necessary, just to do with error handling
+let promise1 = Promise.reject("NOOO1!");
+
+let promise2 = Promise.reject("NOOO2!");
+
+let promise3 = Promise.resolve("YEAH!!")
+
+promise1
+  .then(null, error => console.error(error))
 
 
+promise2
+  .then((k) => console.log(k))
+  .catch(error => console.log(error))
 
-//   ## Task
-
-// This task will allow you to demonstrate an understanding how to chain promises together using then.
-
-// Two functions will be provided as global functions that you can use: first and second.
-
-// Call the first function in your program. 
-// first() will return a promise that will be fulfilled with a secret value.
-
-// Call the second with the fulfilled value of first.
-// Return the promise returned by second in your onFulfilled callback.
-
-// Finally, print the fulfilled value of that new promise with console.log.
-
+  
+promise3
+  .then(message => console.log(message))
+  .catch(error => console.error(error))

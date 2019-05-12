@@ -1,17 +1,15 @@
 'use strict'
 
 let promise = new Promise((fulfill, reject) => {
+  setTimeout(() => {
+    // console.log("FULFILLED!")
+  }, 300);
 
-    setTimeout(() => {
-      fulfill("FULFILLED!");
-    }, 300)
-  })
+})
 
-promise
-  .then(() => {
+promise.then(() => {
   console.log("FULFILLED!");
-  })
-  // .catch((asd) => console.log("error: ", asd))
+})
 
 
 

@@ -1,18 +1,16 @@
 'use strict'
 
 let promise = new Promise((fulfill, reject) => {
-  fulfill("I FIRED");
-  reject(new Error("I DID NOT FIRE"));
-})
 
-let onReject = (error) => {
+    setTimeout(() => {
+      reject(new Error("REJECTED!"));
+    }, 300)
+  })
+
+function onReject(error) {
   console.log(error.message);
 }
 
-// let onReject = (error) => {
-//   console.log(error.message);
-// }
-
 promise
-  .then(console.log, onReject)
+  .then(null, onReject)
   

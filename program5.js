@@ -1,20 +1,18 @@
 'use strict'
 
-let promise1 = Promise.reject("NOOO1!");
+let promise = new Promise((fulfill, reject) => {
+  fulfill("PROMISE VALUE");
+})
 
-let promise2 = Promise.reject("NOOO2!");
+// let onReject = (error) => {
+//   console.log(error.message);
+// }
 
-let promise3 = Promise.resolve("YEAH!!")
+// let onReject = (error) => {
+//   console.log(error.message);
+// }
 
-promise1
-  .then(null, error => console.error(error))
+promise
+  .then(console.log, null)
 
-
-promise2
-  .then((k) => console.log(k))
-  .catch(error => console.log(error))
-
-  
-promise3
-  .then(message => console.log(message))
-  .catch(error => console.error(error))
+console.log("MAIN PROGRAM");
