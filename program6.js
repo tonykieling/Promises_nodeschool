@@ -1,20 +1,32 @@
 'use strict'
 
-let promise1 = Promise.reject("NOOO1!");
+function first() {
+  return Promise.resolve("secret value");
+}
 
-let promise2 = Promise.reject("NOOO2!");
-
-let promise3 = Promise.resolve("YEAH!!")
-
-promise1
-  .then(null, error => console.error(error))
+function second(value) {
+  return Promise.resolve(value);
+}
 
 
-promise2
-  .then((k) => console.log(k))
-  .catch(error => console.log(error))
+const fv = first();
+const sv = second(first());
+console.log("fv: ", fv);
+console.log("sv: ", sv);
 
-  
-promise3
-  .then(message => console.log(message))
-  .catch(error => console.error(error))
+
+// Two functions will be provided as global functions that you can use: first and second.
+
+// Call the first function in your program. first() will return a promise that
+// will be fulfilled with a secret value.
+
+// Call the second with the fulfilled value of first. Return the promise returned
+// by second in your onFulfilled callback.
+
+// Finally, print the fulfilled value of that new promise with console.log.
+
+
+
+// let promise1 = Promise.reject("NOOO-1!");
+// promise1
+//   .then(null, error => console.error(error))
