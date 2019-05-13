@@ -1,27 +1,23 @@
 'use strict'
 
-// first()
-//   .then(message => {
-//     return second(message)})
-//   .then(console.log)
-//   .catch(error => console.log(error)) // it is not necessary, just to do with error handling
+function attachTitle(firstargument) {
+  return ("DR. " + firstargument)
+};
 
-first()
-    .then(second())
-    .then(console.log)
+let myPromise = Promise.resolve("MANHATTAN");
+
+myPromise
+  .then(res => attachTitle(res))
+  .then(console.log)
 
 
-//   ## Task
+// ## Task
+// Construct a promise chain that returns values to prove to yourself that promise handlers will wrap your returned values 
+// in promises allowing additional chaining.
 
-// This task will allow you to demonstrate an understanding how to chain promises together using then.
+//   * Declare a function `attachTitle` which prepends `'DR. '` to its firstargument and returns the result.
+//   * Create a fulfilled promise with a value of `'MANHATTAN'`.
+//   * Build a promise chain off the promise we just constructed that first calls`attachTitle` then calls `console.log`.
 
-// Two functions will be provided as global functions that you can use: first and second.
-
-// Call the first function in your program. 
-// first() will return a promise that will be fulfilled with a secret value.
-
-// Call the second with the fulfilled value of first.
-// Return the promise returned by second in your onFulfilled callback.
-
-// Finally, print the fulfilled value of that new promise with console.log.
+// If your program runs successfully, it should print out “DR. MANHATTAN” which is extremely exciting.
 

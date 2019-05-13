@@ -1,5 +1,13 @@
 'use strict'
 
+// ### Very basic signature
+// let myPromise = Promise.reject("this is a promise REJECT");
+// let myPromise = Promise.reject("this is a promise RESOLVE OK");
+
+// myPromise
+//   .then(console.log)
+//   .catch(console.log)
+
 let promise = new Promise((fulfill, reject) => {
   setTimeout(() => {
     // console.log("FULFILLED!")
@@ -10,6 +18,7 @@ let promise = new Promise((fulfill, reject) => {
 promise.then(() => {
   console.log("FULFILLED!");
 })
+
 
 
 

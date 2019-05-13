@@ -1,11 +1,13 @@
 'use strict'
 
-first()
-  .then(message => {
-    return second(message)})
-  .then(console.log)
-  .catch(error => console.log(error)) // it is not necessary, just to do with error handling
+// first()
+//   .then(message => second(message))
+//   .then(console.log)
+//   .catch(error => console.log(error)) // it is not necessary, just to do with error handling
 
+first()
+  .then(second())
+  .then(console.log)
 
 
 //   ## Task
