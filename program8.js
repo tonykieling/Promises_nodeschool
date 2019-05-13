@@ -7,7 +7,7 @@ function attachTitle(firstargument) {
 let myPromise = Promise.resolve("MANHATTAN");
 
 myPromise
-  .then(res => attachTitle(res))
+  .then(attachTitle)
   .then(console.log)
 
 
@@ -21,3 +21,18 @@ myPromise
 
 // If your program runs successfully, it should print out “DR. MANHATTAN” which is extremely exciting.
 
+
+/*
+Here's the official solution in case you want to compare notes:
+
+────────────────────────────────────────────────────────────────────────────────
+    'use strict';
+    
+    function attachTitle(name) {
+      return 'DR. ' + name;
+    }
+    
+    Promise.resolve('MANHATTAN')
+      .then(attachTitle)
+      .then(console.log);
+  */
