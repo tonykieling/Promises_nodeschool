@@ -1,10 +1,10 @@
 'use strict'
 
-const alwaysThrows = () => Error(`"OH NOES"`)
+const alwaysThrows = () => {throw new Error("OH NOES")}
 
 function iterate(intArg) {
-  console.log(intArg)
-  return intArg + 1
+  console.log(intArg);
+  return intArg + 1;
 }
 
 Promise.resolve(iterate(1))
@@ -39,4 +39,38 @@ travel down the promise chain to the first available rejection handler.
   Your program will now throw an exception in the global context!  Ahh!
   Try to fix this using the approach described above.
   
+
+# PASS
+Your solution to An important rule passed!
+
+Here's the official solution in case you want to compare notes:
+
+    'use strict';
+    
+    function iterate(num) {
+      console.log(num);
+      return num + 1;
+    }
+    
+    function alwaysThrows() {
+      throw new Error('OH NOES');
+    }
+    
+    function onReject(error) {
+      console.log(error.message);
+    }
+    
+    Promise.resolve(iterate(1))
+    .then(iterate)
+    .then(iterate)
+    .then(iterate)
+    .then(iterate)
+    .then(alwaysThrows)
+    .then(iterate)
+    .then(iterate)
+    .then(iterate)
+    .then(iterate)
+    .then(iterate)
+    .catch(onReject);
+
   */
