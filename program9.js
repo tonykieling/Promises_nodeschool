@@ -1,7 +1,7 @@
 'use strict'
-
+// const content = process.argv[2]  // this is to run locally
 // const content = "{\"config\":\"script\}"
-// const content = `{"aaa":"bbb",}` //bad json
+// const content = `{"aaa":"bbb"}` //bad json
 
 function parsePromised(msg) {
   return new Promise((res, rej) => {
@@ -13,7 +13,8 @@ function parsePromised(msg) {
   })
 }
 
-parsePromised(content)
+// parsePromised(content) // to run locally
+parsePromised(process.argv[2])
   .then(console.log, console.log)
 
 /* ## Task
