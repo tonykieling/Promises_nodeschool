@@ -6,8 +6,7 @@ const path2 = "http://localhost:7001"
 
 http.read(path1)
   .then(k => ({id: (Buffer.from(k)).toString()}))
-  // .then(v => ({"id": v.toString()}))
-  // .then(id => http.read(path2 + `/${JSON.parse(id)}`))
+  .then(id => http.read(`http://localhost:7001/<${id}>`))
   .then(console.log)
 
 
