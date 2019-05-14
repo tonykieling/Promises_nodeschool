@@ -4,12 +4,12 @@ let http = require("q-io/http");
 const path1 = "http://localhost:7000"
 const path2 = "http://localhost:7001"
 
-const first = http.read(path1)
+http.read(path1)
   .then(k => ({id: (Buffer.from(k)).toString()}))
   // .then(v => ({"id": v.toString()}))
-console.log("first: ", first)
+// console.log("first: ", first)
   // .then(console.log)
-  .then(id => http.read(path2 + `id:${id}`))
+  .then(id => http.read(path2 + `${id}`))
   .then(console.log)
 
 
