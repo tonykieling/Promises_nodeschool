@@ -7,9 +7,7 @@ const path2 = "http://localhost:7001"
 http.read(path1)
   .then(k => ({id: (Buffer.from(k)).toString()}))
   // .then(v => ({"id": v.toString()}))
-// console.log("first: ", first)
-  // .then(console.log)
-  .then(id => http.read(path2 + `${id}`))
+  // .then(id => http.read(path2 + `/${JSON.parse(id)}`))
   .then(console.log)
 
 
