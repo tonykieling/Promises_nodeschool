@@ -1,0 +1,24 @@
+{
+  "name": "promise-shop",
+  "version": "1.0.0",
+  "description": "Promise's practices from Nodeschool - https://github.com/stevekane/promise-it-wont-hurt. This activity was conducted on Saturday, May 11, 2019, at Sauce Labs - Vancouver.",
+  "main": "program1.js",
+  "dependencies": {
+    "promise-it-wont-hurt": "^1.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonykieling/Promises_nodeschool.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tonykieling/Promises_nodeschool/issues"
+  },
+  "homepage": "https://github.com/tonykieling/Promises_nodeschool#readme"
+}
